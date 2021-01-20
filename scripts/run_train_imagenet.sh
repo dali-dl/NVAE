@@ -1,3 +1,4 @@
+#!/bin/bash
 
 export EXPR_ID=0120
 export DATA_DIR='/group-volume/ASR-Unlabeled-Data/users/da.li1/git/NVAE/data'
