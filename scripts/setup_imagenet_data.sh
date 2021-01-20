@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export DATA_DIR='/group-volume/ASR-Unlabeled-Data/users/da.li1/git/NVAE/data'
+export DATA_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/data'
 mkdir -p $DATA_DIR/imagenet-oord
 cd $DATA_DIR/imagenet-oord
 wget https://storage.googleapis.com/glow-demo/data/imagenet-oord-tfr.tar
