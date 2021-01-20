@@ -1,13 +1,12 @@
 
-export EXPR_ID=UNIQUE_EXPR_ID
-export DATA_DIR=PATH_TO_DATA_DIR
-export CHECKPOINT_DIR=PATH_TO_CHECKPOINT_DIR
-export CODE_DIR=PATH_TO_CODE_DIR
-export IP_ADDR=IP_ADDRESS
-export NODE_RANK=NODE_RANK_BETWEEN_0_TO_2
-cd $CODE_DIR
+export EXPR_ID=0120
+export DATA_DIR='/group-volume/ASR-Unlabeled-Data/users/da.li1/git/NVAE/data'
+export CHECKPOINT_DIR='/group-volume/ASR-Unlabeled-Data/users/da.li1/git/NVAE/ckpt'
+export IP_ADDR='127.0.0.1'
+export NODE_RANK=0
+cd ..
 mpirun --allow-run-as-root -np 3 -npernode 1 bash -c \
-        'python train.py --data $DATA_DIR/imagenet-oord/imagenet-oord-lmdb_32 --root $CHECKPOINT_DIR --save $EXPR_ID --dataset imagenet_32 \
+        'python3 train.py --data $DATA_DIR/imagenet-oord/imagenet-oord-lmdb_32 --root $CHECKPOINT_DIR --save $EXPR_ID --dataset imagenet_32 \
         --num_channels_enc 192 --num_channels_dec 192 --epochs 45 --num_postprocess_cells 2 --num_preprocess_cells 2 \
         --num_latent_scales 1 --num_latent_per_group 20 --num_cell_per_cond_enc 2 --num_cell_per_cond_dec 2 \
         --num_preprocess_blocks 1 --num_postprocess_blocks 1 --num_groups_per_scale 28 \
