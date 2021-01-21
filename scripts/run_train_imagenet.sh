@@ -13,5 +13,5 @@ mpirun --allow-run-as-root -np 1 -npernode 1 bash -c \
         --num_preprocess_blocks 1 --num_postprocess_blocks 1 --num_groups_per_scale 28 \
         --batch_size 24 --num_nf 1 --warmup_epochs 1 \
         --weight_decay_norm 1e-2 --weight_decay_norm_anneal --weight_decay_norm_init 1e0 \
-        --num_process_per_node 8 --use_se --res_dist \
+        --num_process_per_node 24 --use_se --res_dist \
         --fast_adamax --node_rank $NODE_RANK --num_proc_node 1 --master_address $IP_ADDR '
