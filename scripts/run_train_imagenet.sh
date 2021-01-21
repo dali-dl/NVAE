@@ -6,7 +6,7 @@ export CHECKPOINT_DIR='/group-volume/ASR-Unlabeled-Data/users/da.li1/git/NVAE/ck
 export IP_ADDR='127.0.0.1'
 export NODE_RANK=0
 cd ..
-mpirun --allow-run-as-root -np 3 -npernode 1 \
+mpirun --allow-run-as-root -np 1 -npernode 1 bash -c \
         'python3 train.py --data $DATA_DIR/imagenet-oord/imagenet-oord-lmdb_32 --root $CHECKPOINT_DIR --save $EXPR_ID --dataset imagenet_32 \
         --num_channels_enc 192 --num_channels_dec 192 --epochs 45 --num_postprocess_cells 2 --num_preprocess_cells 2 \
         --num_latent_scales 1 --num_latent_per_group 20 --num_cell_per_cond_enc 2 --num_cell_per_cond_dec 2 \
