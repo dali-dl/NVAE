@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export CUDA_VISIBLE_DEVICES='0,1'
+sleep 20m 30s
 export EXPR_ID=0122
 export DATA_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/data'
 export CHECKPOINT_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/ckpt'
