@@ -20,7 +20,7 @@ from thirdparty.adamax import Adamax
 import utils
 import datasets
 
-
+torch.multiprocessing.set_start_method('spawn')
 def main(args):
     # ensures that weight initializations are all the same
     torch.manual_seed(args.seed)
