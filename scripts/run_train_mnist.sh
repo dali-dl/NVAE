@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export EXPR_ID=0120
-export DATA_DIR='/group-volume/ASR-Unlabeled-Data/users/da.li1/git/NVAE/data'
-export CHECKPOINT_DIR='/group-volume/ASR-Unlabeled-Data/users/da.li1/git/NVAE/ckpt'
+export EXPR_ID=0122
+export DATA_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/data'
+export CHECKPOINT_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/ckpt'
 cd ..
 python3 train.py --data $DATA_DIR/mnist --root $CHECKPOINT_DIR --save $EXPR_ID --dataset mnist --batch_size 200 \
         --epochs 400 --num_latent_scales 2 --num_groups_per_scale 10 --num_postprocess_cells 3 --num_preprocess_cells 3 \
