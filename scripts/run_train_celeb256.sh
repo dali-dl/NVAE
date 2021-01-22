@@ -4,8 +4,6 @@ export EXPR_ID=0122
 export DATA_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/data'
 export CHECKPOINT_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/ckpt'
 export CODE_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/'
-export IP_ADDR='127.0.0.1'
-export NODE_RANK=0
 cd $CODE_DIR
 python3 train.py --data $DATA_DIR/celeba/celeba-lmdb --root $CHECKPOINT_DIR --save $EXPR_ID --dataset celeba_256 \
         --num_channels_enc 30 --num_channels_dec 30 --epochs 300 --num_postprocess_cells 2 --num_preprocess_cells 2 \
@@ -13,4 +11,4 @@ python3 train.py --data $DATA_DIR/celeba/celeba-lmdb --root $CHECKPOINT_DIR --sa
         --num_preprocess_blocks 1 --num_postprocess_blocks 1 --weight_decay_norm 1e-2 --num_groups_per_scale 16 \
         --batch_size 4 --num_nf 2 --ada_groups --min_groups_per_scale 4 \
         --weight_decay_norm_anneal --weight_decay_norm_init 1. --num_process_per_node 8 --use_se --res_dist \
-        --fast_adamax --num_x_bits 5 --node_rank $NODE_RANK --num_proc_node 1 --master_address $IP_ADDR
+        --fast_adamax --num_x_bits 5
