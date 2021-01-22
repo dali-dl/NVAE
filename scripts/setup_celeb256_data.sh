@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export DATA_DIR='/vol1/dbstore/orc_sruk/users/da.li1/git/NVAE/data'
-export CODE_DIR='/vol1/dbstore/orc_sruk/users/da.li1/git/NVAE/'
+export DATA_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/data'
+export CODE_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/'
 #mkdir -p $DATA_DIR/celeba
 #cd $DATA_DIR/celeba
 #wget https://storage.googleapis.com/glow-demo/data/celeba-tfr.tar
