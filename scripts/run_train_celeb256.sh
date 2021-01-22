@@ -1,11 +1,11 @@
 #!/bin/bash
 
-export EXPR_ID=0121
-export DATA_DIR='/group-volume/ASR-Unlabeled-Data/users/da.li1/git/NVAE/data'
-export CHECKPOINT_DIR='/group-volume/ASR-Unlabeled-Data/users/da.li1/git/NVAE/ckpt'
-export CODE_DIR='/group-volume/ASR-Unlabeled-Data/users/da.li1/git/NVAE/'
+export EXPR_ID=0122
+export DATA_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/data'
+export CHECKPOINT_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/ckpt'
+export CODE_DIR='/group-volume/orc_sruk/users/da.li1/git/NVAE/'
 export IP_ADDR='127.0.0.1'
-export NODE_RANK=2
+export NODE_RANK=0
 cd $CODE_DIR
 mpirun --allow-run-as-root -np 3 -npernode 1 bash -c \
         'python3 train.py --data $DATA_DIR/celeba/celeba-lmdb --root $CHECKPOINT_DIR --save $EXPR_ID --dataset celeba_256 \
