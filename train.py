@@ -393,6 +393,7 @@ if __name__ == '__main__':
 
     size = args.num_process_per_node
 
+    print('available GPUs', torch.cuda.device_count())
     if size > 1:
         args.distributed = True
         processes = []
