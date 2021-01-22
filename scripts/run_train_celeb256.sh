@@ -7,7 +7,7 @@ export CODE_DIR='/group-volume/ASR-Unlabeled-Data/users/da.li1/git/NVAE/'
 export NODE_RANK=0
 cd $CODE_DIR
 mpirun --allow-run-as-root -np 1 -npernode 1 bash -c \
-        'python train.py --data $DATA_DIR/celeba/celeba-lmdb --root $CHECKPOINT_DIR --save $EXPR_ID --dataset celeba_256 \
+        'python3 train.py --data $DATA_DIR/celeba/celeba-lmdb --root $CHECKPOINT_DIR --save $EXPR_ID --dataset celeba_256 \
         --num_channels_enc 30 --num_channels_dec 30 --epochs 300 --num_postprocess_cells 2 --num_preprocess_cells 2 \
         --num_latent_scales 5 --num_latent_per_group 20 --num_cell_per_cond_enc 2 --num_cell_per_cond_dec 2 \
         --num_preprocess_blocks 1 --num_postprocess_blocks 1 --weight_decay_norm 1e-2 --num_groups_per_scale 16 \
