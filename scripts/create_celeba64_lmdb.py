@@ -40,9 +40,10 @@ def main(split, img_path, lmdb_path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('CelebA 64 LMDB creator.')
     # experimental results
-    parser.add_argument('--img_path', type=str, default='/data1/datasets/celeba_org/',
+    parser.add_argument('--img_path', type=str, default='/group-volume/orc_sruk/users/da.li1/git/NVAE/data/celeba_org/',
                         help='location of images for CelebA dataset')
-    parser.add_argument('--lmdb_path', type=str, default='/data1/datasets/celeba_org/celeba64_lmdb',
+    parser.add_argument('--lmdb_path', type=str,
+                        default='/group-volume/orc_sruk/users/da.li1/git/NVAE/data/celeba_org/celeba64_lmdb',
                         help='target location for storing lmdb files')
     parser.add_argument('--split', type=str, default='train',
                         help='training or validation split', choices=["train", "valid", "test"])
