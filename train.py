@@ -392,8 +392,9 @@ if __name__ == '__main__':
     utils.create_exp_dir(args.save)
 
     size = args.num_process_per_node
-
+    os.environ['CUDA_VISIBLE_DEVICES'] = ','.join(f'{i}' for i in range(size))
     print('available GPUs', torch.cuda.device_count())
+    print('args.num_process_per_node', args.num_process_per_node)
     if size > 1:
         args.distributed = True
         processes = []
