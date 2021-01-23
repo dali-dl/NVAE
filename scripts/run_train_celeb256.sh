@@ -13,4 +13,4 @@ mpirun --allow-run-as-root -np 1 -npernode 1 bash -c \
         --num_preprocess_blocks 1 --num_postprocess_blocks 1 --weight_decay_norm 1e-2 --num_groups_per_scale 16 \
         --batch_size 4 --num_nf 2 --ada_groups --min_groups_per_scale 4 \
         --weight_decay_norm_anneal --weight_decay_norm_init 1. --num_process_per_node 4 --use_se --res_dist \
-        --fast_adamax --num_x_bits 5 --node_rank $NODE_RANK --num_proc_node 1'
+        --fast_adamax --num_x_bits 5 --node_rank $NODE_RANK --num_proc_node 1 '
