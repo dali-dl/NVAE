@@ -290,6 +290,7 @@ def cleanup():
 
 
 if __name__ == '__main__':
+    torch.multiprocessing.set_start_method('spawn')
     parser = argparse.ArgumentParser('encoder decoder examiner')
     # experimental results
     parser.add_argument('--root', type=str, default='/tmp/nasvae/expr',
