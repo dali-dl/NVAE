@@ -395,11 +395,13 @@ if __name__ == '__main__':
     size = args.num_process_per_node
     print('available GPUs', torch.cuda.device_count())
     print('args.num_process_per_node', args.num_process_per_node)
+    
+    torch.multiprocessing.set_start_method('spawn')
+
     if size > 1:
         args.distributed = True
         processes = []
         for rank in range(size):
-            torch.multiprocessing.set_start_method('spawn')
             args.local_rank = rank
             global_rank = rank + args.node_rank * args.num_process_per_node
             global_size = args.num_proc_node * args.num_process_per_node
