@@ -20,6 +20,8 @@ from thirdparty.adamax import Adamax
 import utils
 import datasets
 
+torch.multiprocessing.set_start_method('spawn')
+
 
 # torch.multiprocessing.set_start_method('spawn')
 def main(args):
@@ -395,8 +397,6 @@ if __name__ == '__main__':
     size = args.num_process_per_node
     print('available GPUs', torch.cuda.device_count())
     print('args.num_process_per_node', args.num_process_per_node)
-    
-    torch.multiprocessing.set_start_method('spawn')
 
     if size > 1:
         args.distributed = True
