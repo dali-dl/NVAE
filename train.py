@@ -20,11 +20,9 @@ from thirdparty.adamax import Adamax
 import utils
 import datasets
 
+from mpi4py import MPI
 
-# torch.multiprocessing.set_start_method('spawn')
 
-
-# torch.multiprocessing.set_start_method('spawn')
 def main(args):
     # ensures that weight initializations are all the same
     torch.manual_seed(args.seed)
@@ -399,6 +397,10 @@ if __name__ == '__main__':
     print('available GPUs', torch.cuda.device_count())
     print('args.num_process_per_node', args.num_process_per_node)
     torch.multiprocessing.set_start_method('spawn')
+
+    comm = MPI.COMM_WORLD
+    node_rank = comm.Get_rank()
+    args.node_rank = node_rank
 
     if size > 1:
         args.distributed = True
